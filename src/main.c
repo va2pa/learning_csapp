@@ -34,18 +34,16 @@ int main()
     write64bits_dram(va2pa(0x7fffffffe3f8), 0x12340000);
     write64bits_dram(va2pa(0x7fffffffe3f0), 0x555555554660);    //rsp
 
-    printf("%lx", read64bits_dram(va2pa(0x7fffffffe400)));
-    return 0;
 
     print_register();
     print_stack();
 
-    // instruct_cycle
-    // for(int i = 0;i < 15;i++){
-    //     instruction_cycle();
-    //     print_register();
-    //     print_stack(); 
-    // }
+    for(int i = 0;i < 15;i++){
+        instruction_cycle();
+        print_register();
+        print_stack(); 
+    }
+
 
     // verify
     int match = 1;

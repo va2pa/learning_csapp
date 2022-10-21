@@ -6,7 +6,6 @@
 #define SRAM_CACHE_SETTING 0
 
 uint64_t read64bits_dram(uint64_t paddr){
-    printf("xxxxxxxxxx\n");
     if(SRAM_CACHE_SETTING){
         return 0;
     }
@@ -19,8 +18,6 @@ uint64_t read64bits_dram(uint64_t paddr){
     val += ((uint64_t)mm[paddr + 5]) << 40;
     val += ((uint64_t)mm[paddr + 6]) << 48;
     val += ((uint64_t)mm[paddr + 7]) << 56;
-    printf("yyyyyyyyyyyyyyy\n");
-
     return val;
 }
 

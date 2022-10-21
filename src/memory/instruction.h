@@ -44,26 +44,26 @@ typedef struct INST
 
 void (*handler_table[30])(uint64_t src, uint64_t dst);
 
-void cycle_instruction();
+void instruction_cycle();
 
 void init_handler_table();
 
-void push_reg_handler();
+void push_reg_handler(uint64_t src, uint64_t dst);
 
-void pop_reg_handler();
+void pop_reg_handler(uint64_t src, uint64_t dst);
 
-void mov_reg_reg_handler();
+void mov_reg_reg_handler(uint64_t src, uint64_t dst);
 
-void mov_reg_mem_handler();
+void mov_reg_mem_handler(uint64_t src, uint64_t dst);
 
-void mov_mem_reg_handler();
+void mov_mem_reg_handler(uint64_t src, uint64_t dst);
 
-void add_reg_reg_handler();
+void add_reg_reg_handler(uint64_t src, uint64_t dst);
 
-void sub_imm_reg_handler();
+void sub_imm_reg_handler(uint64_t src, uint64_t dst);
 
-void call_handler();
+void call_handler(uint64_t src, uint64_t dst);
 
-void ret_handler();
+void ret_handler(uint64_t src, uint64_t dst);
 
 #endif
